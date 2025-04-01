@@ -1,0 +1,579 @@
+2025-03-13 17:36:11,312 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-03-13 17:36:11,322 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-03-13 17:36:12,846 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 17:36:12,846 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 17:36:14,104 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 17:48:50,318 - websockets.server - INFO - server closing
+2025-03-13 17:48:50,320 - websockets.server - INFO - server closed
+2025-03-13 17:48:50,322 - train_control - INFO - Server shutdown by user
+2025-03-13 19:26:26,226 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 19:26:26,247 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 19:26:26,247 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 19:27:07,811 - websockets.server - INFO - connection rejected (500 Internal Server Error)
+2025-03-13 19:27:07,813 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 147, in handshake
+    response = process_request(self, self.request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prithvimalhotra/Developer/rule4/HMI-Design-Development-in-IIOT/backend/backend.py", line 313, in <lambda>
+    [(k, v) if k.lower() != 'sec-websocket-protocol' else
+TypeError: 'Request' object is not iterable
+2025-03-13 19:27:08,596 - websockets.server - INFO - connection rejected (500 Internal Server Error)
+2025-03-13 19:27:08,597 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 147, in handshake
+    response = process_request(self, self.request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prithvimalhotra/Developer/rule4/HMI-Design-Development-in-IIOT/backend/backend.py", line 313, in <lambda>
+    [(k, v) if k.lower() != 'sec-websocket-protocol' else
+TypeError: 'Request' object is not iterable
+2025-03-13 19:30:29,570 - websockets.server - INFO - server closing
+2025-03-13 19:30:29,573 - websockets.server - INFO - server closed
+2025-03-13 19:30:29,574 - train_control - INFO - Server shutdown by user
+2025-03-13 19:30:32,678 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 19:30:32,686 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 19:30:32,686 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 19:30:59,704 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:30:59,706 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:31:00,776 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:31:00,777 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:31:01,607 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:31:01,607 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:31:06,644 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:31:06,646 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:31:49,109 - websockets.server - INFO - server closing
+2025-03-13 19:31:49,111 - websockets.server - INFO - server closed
+2025-03-13 19:31:49,113 - train_control - INFO - Server shutdown by user
+2025-03-13 19:31:52,461 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-03-13 19:31:52,469 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-03-13 19:31:53,500 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 19:31:53,500 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 19:31:53,958 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 19:32:37,765 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:32:37,770 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:32:38,804 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:32:38,804 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:32:43,833 - websockets.server - ERROR - unexpected internal error
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+2025-03-13 19:32:43,834 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 889, in send_context
+    yield
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 169, in handshake
+    assert isinstance(response, Response)  # help mypy
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/opt/anaconda3/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2025-03-13 19:36:20,469 - websockets.server - INFO - server closing
+2025-03-13 19:36:20,473 - websockets.server - INFO - server closed
+2025-03-13 19:36:20,478 - train_control - INFO - Server shutdown by user
+2025-03-13 19:36:22,621 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 19:36:22,630 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 19:36:22,630 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 19:36:36,327 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-03-13 19:36:36,328 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-03-13 19:36:36,940 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-03-13 19:36:36,956 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-03-13 19:37:02,667 - websockets.server - INFO - connection open
+2025-03-13 19:37:02,667 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:37:02,680 - websockets.server - INFO - connection open
+2025-03-13 19:37:02,680 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:38:28,980 - websockets.server - INFO - connection open
+2025-03-13 19:38:28,981 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:39:22,843 - websockets.server - INFO - connection open
+2025-03-13 19:39:22,844 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:39:28,661 - websockets.server - INFO - connection open
+2025-03-13 19:39:28,661 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:39:28,673 - websockets.server - INFO - connection open
+2025-03-13 19:39:28,673 - websockets.server - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: websocket_handler() missing 1 required positional argument: 'path'
+2025-03-13 19:42:03,466 - websockets.server - INFO - server closing
+2025-03-13 19:42:03,468 - websockets.server - INFO - server closed
+2025-03-13 19:42:03,469 - train_control - INFO - Server shutdown by user
+2025-03-13 19:42:04,811 - train_control - INFO - Using websockets library version: 15.0.1
+2025-03-13 19:42:04,820 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-13 19:42:04,826 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-13 19:42:04,826 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-13 19:42:18,784 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-03-13 19:42:18,786 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-03-13 19:42:19,143 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-03-13 19:42:19,160 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-03-13 19:42:26,159 - websockets.server - INFO - connection open
+2025-03-13 19:42:26,159 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:35,501 - websockets.server - INFO - connection open
+2025-03-13 19:42:35,502 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:35,730 - websockets.server - INFO - connection open
+2025-03-13 19:42:35,730 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:35,836 - websockets.server - INFO - connection open
+2025-03-13 19:42:35,837 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:36,100 - websockets.server - INFO - connection open
+2025-03-13 19:42:36,100 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:36,258 - websockets.server - INFO - connection open
+2025-03-13 19:42:36,258 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 19:42:41,325 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-03-13 19:42:41,327 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-03-13 19:42:47,367 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-13 19:42:47,369 - train_control - INFO - User admin set velocity to 100
+2025-03-13 19:42:50,797 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-13 19:42:50,798 - train_control - INFO - User admin sent gate command: Open
+2025-03-13 19:42:52,283 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-13 19:42:52,283 - train_control - INFO - User admin sent gate command: Open
+2025-03-13 19:42:53,532 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-13 19:42:53,533 - train_control - INFO - User admin sent gate command: Close
+2025-03-13 20:03:28,550 - train_control - INFO - Connection closed from 127.0.0.1
+2025-03-13 20:03:28,567 - train_control - INFO - User admin disconnected
+2025-03-13 20:05:54,000 - websockets.server - INFO - connection open
+2025-03-13 20:05:54,002 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:05:54,014 - websockets.server - INFO - connection open
+2025-03-13 20:05:54,014 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:31,488 - websockets.server - INFO - connection open
+2025-03-13 20:06:31,489 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:31,720 - websockets.server - INFO - connection open
+2025-03-13 20:06:31,720 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:31,794 - websockets.server - INFO - connection open
+2025-03-13 20:06:31,795 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:32,007 - websockets.server - INFO - connection open
+2025-03-13 20:06:32,007 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:32,155 - websockets.server - INFO - connection open
+2025-03-13 20:06:32,155 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-13 20:06:35,618 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-03-13 20:06:35,619 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-03-13 20:06:36,674 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-13 20:06:36,675 - train_control - INFO - User admin set velocity to 100
+2025-03-13 20:06:41,571 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-13 20:06:41,571 - train_control - INFO - User admin set velocity to 100
+2025-03-13 20:06:43,319 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-13 20:06:43,320 - train_control - INFO - User admin sent gate command: Open
+2025-03-13 20:06:44,935 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-13 20:06:44,936 - train_control - INFO - User admin sent gate command: Close
+2025-03-13 20:08:57,035 - train_control - INFO - Connection closed from 127.0.0.1
+2025-03-13 20:08:57,036 - train_control - INFO - User admin disconnected
+2025-03-13 22:54:25,836 - train_control - INFO - Server shutdown by user
+2025-03-18 16:43:14,463 - train_control - INFO - Using websockets library version: 15.0.1
+2025-03-18 16:43:14,471 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-18 16:43:14,493 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-18 16:43:14,493 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-18 16:43:18,677 - websockets.server - INFO - connection open
+2025-03-18 16:43:18,678 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:21,865 - websockets.server - INFO - connection open
+2025-03-18 16:43:21,866 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:22,126 - websockets.server - INFO - connection open
+2025-03-18 16:43:22,126 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:22,289 - websockets.server - INFO - connection open
+2025-03-18 16:43:22,290 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:22,511 - websockets.server - INFO - connection open
+2025-03-18 16:43:22,512 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:22,673 - websockets.server - INFO - connection open
+2025-03-18 16:43:22,673 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 16:43:24,712 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-03-18 16:43:24,713 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-03-18 16:43:27,613 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-18 16:43:27,614 - train_control - INFO - User admin set velocity to 100
+2025-03-18 16:43:30,392 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 16:43:30,393 - train_control - INFO - User admin sent gate command: Open
+2025-03-18 16:43:32,576 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 16:43:32,577 - train_control - INFO - User admin sent gate command: Close
+2025-03-18 16:51:25,350 - train_control - INFO - User admin disconnected
+2025-03-18 16:51:25,352 - train_control - INFO - Server shutdown by user
+2025-03-18 17:14:58,259 - train_control - INFO - Using websockets library version: 15.0.1
+2025-03-18 17:14:58,264 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-18 17:14:58,275 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-18 17:14:58,275 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-18 17:15:04,553 - websockets.server - INFO - connection open
+2025-03-18 17:15:04,554 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:09,505 - websockets.server - INFO - connection open
+2025-03-18 17:15:09,506 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:09,740 - websockets.server - INFO - connection open
+2025-03-18 17:15:09,741 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:09,841 - websockets.server - INFO - connection open
+2025-03-18 17:15:09,841 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:10,057 - websockets.server - INFO - connection open
+2025-03-18 17:15:10,057 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:10,192 - websockets.server - INFO - connection open
+2025-03-18 17:15:10,192 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:15:13,216 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-03-18 17:15:13,217 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-03-18 17:15:15,101 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-18 17:15:15,101 - train_control - INFO - User admin set velocity to 100
+2025-03-18 17:15:18,047 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 17:15:18,048 - train_control - INFO - User admin sent gate command: Open
+2025-03-18 17:15:19,830 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 17:15:19,830 - train_control - INFO - User admin sent gate command: Close
+2025-03-18 17:43:21,580 - train_control - INFO - User admin disconnected
+2025-03-18 17:43:21,582 - train_control - INFO - Server shutdown by user
+2025-03-18 17:46:52,748 - train_control - INFO - Using websockets library version: 15.0.1
+2025-03-18 17:46:52,753 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-03-18 17:46:52,763 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-03-18 17:46:52,764 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-03-18 17:46:59,366 - websockets.server - INFO - connection open
+2025-03-18 17:46:59,367 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:46:59,381 - websockets.server - INFO - connection open
+2025-03-18 17:46:59,381 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:48:47,792 - websockets.server - INFO - connection open
+2025-03-18 17:48:47,793 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:48:48,054 - websockets.server - INFO - connection open
+2025-03-18 17:48:48,054 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:48:48,142 - websockets.server - INFO - connection open
+2025-03-18 17:48:48,143 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:48:48,323 - websockets.server - INFO - connection open
+2025-03-18 17:48:48,323 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:48:48,473 - websockets.server - INFO - connection open
+2025-03-18 17:48:48,474 - train_control - INFO - Client connected from 127.0.0.1
+2025-03-18 17:49:44,970 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-03-18 17:49:44,974 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-03-18 17:50:06,821 - train_control - INFO - Received message from 127.0.0.1: command
+2025-03-18 17:50:06,822 - train_control - INFO - User admin set velocity to 100
+2025-03-18 17:50:16,182 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 17:50:16,182 - train_control - INFO - User admin sent gate command: Open
+2025-03-18 17:51:05,300 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 17:51:05,302 - train_control - INFO - User admin sent gate command: Open
+2025-03-18 17:51:11,017 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-03-18 17:51:11,017 - train_control - INFO - User admin sent gate command: Close
+2025-03-18 18:02:32,802 - train_control - INFO - User admin disconnected
+2025-03-18 18:02:32,804 - train_control - INFO - Server shutdown by user
+2025-04-01 17:11:29,120 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-01 17:11:29,126 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-04-01 17:11:29,146 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-01 17:11:29,146 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-04-01 17:12:21,067 - train_control - INFO - Server shutdown by user
+2025-04-01 17:12:22,422 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-01 17:12:22,431 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-04-01 17:12:22,436 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-01 17:12:22,436 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-04-01 17:12:43,814 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-01 17:12:43,816 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-04-01 17:12:44,176 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-01 17:12:44,177 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-04-01 17:12:59,089 - websockets.server - INFO - connection open
+2025-04-01 17:12:59,090 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:12:59,102 - websockets.server - INFO - connection open
+2025-04-01 17:12:59,102 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:02,525 - websockets.server - INFO - connection open
+2025-04-01 17:13:02,525 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:02,783 - websockets.server - INFO - connection open
+2025-04-01 17:13:02,783 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:02,895 - websockets.server - INFO - connection open
+2025-04-01 17:13:02,895 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:03,128 - websockets.server - INFO - connection open
+2025-04-01 17:13:03,128 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:03,288 - websockets.server - INFO - connection open
+2025-04-01 17:13:03,288 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:13:07,168 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-01 17:13:07,170 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-01 17:19:28,484 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-01 17:19:28,489 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-01 17:19:29,808 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:19:29,808 - train_control - INFO - User admin sent gate command: Open
+2025-04-01 17:19:31,572 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:19:31,572 - train_control - INFO - User admin sent gate command: Close
+2025-04-01 17:19:33,220 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:19:33,220 - train_control - INFO - User admin sent gate command: Open
+2025-04-01 17:19:35,258 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-01 17:19:35,259 - train_control - INFO - User admin set velocity to 100
+2025-04-01 17:21:43,160 - train_control - INFO - User admin disconnected
+2025-04-01 17:21:43,211 - websockets.server - INFO - connection open
+2025-04-01 17:21:43,212 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:21:50,985 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-01 17:21:50,988 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-01 17:22:39,301 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:22:39,303 - train_control - INFO - User admin sent gate command: Open
+2025-04-01 17:22:39,632 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:22:39,632 - train_control - INFO - User admin sent gate command: Open
+2025-04-01 17:22:58,305 - train_control - INFO - User admin disconnected
+2025-04-01 17:22:58,320 - websockets.server - INFO - connection open
+2025-04-01 17:22:58,321 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-01 17:23:03,829 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-01 17:23:03,832 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-01 17:23:05,115 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:23:05,115 - train_control - INFO - User admin sent gate command: Open
+2025-04-01 17:23:06,348 - train_control - INFO - Received message from 127.0.0.1: gate
+2025-04-01 17:23:06,349 - train_control - INFO - User admin sent gate command: Close
+2025-04-01 17:23:07,250 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-01 17:23:07,250 - train_control - INFO - User admin set velocity to 100
+2025-04-01 17:24:04,196 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-01 17:24:04,203 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-01 17:24:13,166 - train_control - INFO - User admin disconnected
+2025-04-01 17:24:13,168 - train_control - INFO - Server shutdown by user

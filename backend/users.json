@@ -1,0 +1,11 @@
+{
+    "admin": {
+      "password": "admin123"
+    },
+    "operator1": {
+      "password": "train456"
+    },
+    "operator2": {
+      "password": "control789"
+    }
+  }
