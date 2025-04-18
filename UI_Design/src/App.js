@@ -78,7 +78,7 @@ const TrainControl = () => {
       setStatus(`Sending gate command: ${action}`);
     } else {
       // Fallback to HTTPS endpoint with authentication token
-      fetch('https://localhost:8001', {
+      fetch('https://192.168.56.2:8001', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ const TrainControl = () => {
     console.log("Connecting to WebSocket server...");
     
     // Using wss:// for secure WebSocket connection
-    const socket = new WebSocket("wss://localhost:8000");
+    const socket = new WebSocket("wss://192.168.56.2:8000");
     setWs(socket);
     
     socket.onopen = () => {
@@ -230,7 +230,7 @@ const TrainControl = () => {
           <Alert severity="error" style={{ marginBottom: '15px' }}>
             {connectionError}
             <div style={{ fontSize: '0.9em', marginTop: '8px' }}>
-              To accept the SSL certificate, visit <a href="https://localhost:8000" target="_blank" rel="noopener noreferrer">https://localhost:8000</a> and <a href="https://localhost:8001" target="_blank" rel="noopener noreferrer">https://localhost:8001</a> directly in your browser.
+              To accept the SSL certificate, visit <a href="https://192.168.56.2:8000" target="_blank" rel="noopener noreferrer">https://localhost:8000</a> and <a href="https://localhost:8001" target="_blank" rel="noopener noreferrer">https://localhost:8001</a> directly in your browser.
             </div>
           </Alert>
         )}

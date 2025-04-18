@@ -51,7 +51,6 @@ def log_command(username, command_type, value):
 
 
 #"\xAA\x01\x2C\x13\x88\x12\xAB\x01\xF4\x00\x04\x00\x00\x00\x42\x00\x00\x00\x00\x6A"
-
 def get_voltage(voltage_value):
     # Initialize command with integer bytes, not strings
     command = [
@@ -76,12 +75,12 @@ def get_voltage(voltage_value):
         0x00   # Total 19 bytes before checksum
     ]
 
-    mV = int(voltage_value * 100)
+    mV = int(voltage_value * 10)
     high_byte = (mV >> 8) & 0xFF
     low_byte = mV & 0xFF
 
-    command[3] = high_byte
-    command[4] = low_byte
+    command[7] = high_byte
+    command[8] = low_byte
 
     checksum = sum(command) % 256
     command.append(checksum)
