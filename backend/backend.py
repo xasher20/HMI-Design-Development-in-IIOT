@@ -11,6 +11,7 @@ import threading
 from urllib.parse import parse_qs
 import base64
 import subprocess
+import serial
 
 # Configure logging
 logging.basicConfig(
@@ -149,8 +150,12 @@ async def websocket_handler(websocket):
                     # Process the train velocity command
                     velocity = data['value']
                     setVoltageCommand = get_voltage(int(velocity))
-                    linuxCommand = f"echo -n -e {setVoltageCommand} > /dev/ttyUSB0"
-                    print(linuxCommand)
+                    # linuxCommand = f"echo -n -e {setVoltageCommand} > /dev/ttyUSB0"
+                    # print(linuxCommand)
+                    command_bytes = bytes.fromhex(setVoltageCommand.replace('\\x', ''))
+
+                    with serial.Serial('/dev/ttyUSB0', 9600, timeout=1) as ser:
+                        ser.write(command_bytes)
                     subprocess.run(f"sh -c \"{linuxCommand}\"", shell=True)
                     logger.info(f"User {username} set velocity to {velocity}")
                     log_command(username, "velocity", velocity)
