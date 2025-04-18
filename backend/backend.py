@@ -151,7 +151,7 @@ async def websocket_handler(websocket):
                     setVoltageCommand = get_voltage(int(velocity))
                     linuxCommand = f"echo -n -e {setVoltageCommand} > /dev/ttyUSB0"
                     print(linuxCommand)
-                    subprocess.run(linuxCommand, shell=True)
+                    subprocess.run(f"sh -c \"{linuxCommand}\"", shell=True)
                     logger.info(f"User {username} set velocity to {velocity}")
                     log_command(username, "velocity", velocity)
                     
