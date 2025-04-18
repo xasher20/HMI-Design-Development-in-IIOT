@@ -156,7 +156,7 @@ async def websocket_handler(websocket):
 
                     with serial.Serial('/dev/ttyUSB0', 9600, timeout=1) as ser:
                         ser.write(command_bytes)
-                    subprocess.run(f"sh -c \"{linuxCommand}\"", shell=True)
+                    # subprocess.run(f"sh -c \"{linuxCommand}\"", shell=True)
                     logger.info(f"User {username} set velocity to {velocity}")
                     log_command(username, "velocity", velocity)
                     
