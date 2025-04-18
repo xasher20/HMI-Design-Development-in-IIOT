@@ -56,15 +56,15 @@ def get_voltage(voltage_value):
     command = [
         0xAA,  # Header
         0x01,  # Device number
-        0x2C,  # Command (Set voltage/current/protection)
-        0x13,  # Voltage high byte (to be updated)
-        0x88,  # Voltage low byte (to be updated)
-        0x12,  # Current high byte
-        0xAB,  # Current low byte
-        0x01,  # OVP high
-        0xF4,  # OVP low
-        0x00,  # OCP high
-        0x04,  # OCP low
+        0x2C,  # Command (Set/Get)
+        0x13,  # High byte of current protection voltage value
+        0x88,  # Low byte of current protection voltage value
+        0x12,  # High byte of current protection current value
+        0xAB,  # Low byte of current protection current value
+        0x01,  # High byte of current set voltage value
+        0xF4,  # Low byte of current set voltage value
+        0x00,  # High byte of current value currently set
+        0x04,  # Low byte of current value currently set
         0x00,
         0x00,
         0x00,
