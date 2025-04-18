@@ -10,6 +10,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
 from urllib.parse import parse_qs
 import base64
+import subprocess
 
 # Configure logging
 logging.basicConfig(
@@ -47,6 +48,46 @@ def log_command(username, command_type, value):
     
     with open("command_log.txt", "a") as f:
         f.write(log_entry)
+
+
+#"\xAA\x01\x2C\x13\x88\x12\xAB\x01\xF4\x00\x04\x00\x00\x00\x42\x00\x00\x00\x00\x6A"
+
+def get_voltage(voltage_value):
+    # Initialize command with integer bytes, not strings
+    command = [
+        0xAA,  # Header
+        0x01,  # Device number
+        0x2C,  # Command (Set voltage/current/protection)
+        0x13,  # Voltage high byte (to be updated)
+        0x88,  # Voltage low byte (to be updated)
+        0x12,  # Current high byte
+        0xAB,  # Current low byte
+        0x01,  # OVP high
+        0xF4,  # OVP low
+        0x00,  # OCP high
+        0x04,  # OCP low
+        0x00,
+        0x00,
+        0x00,
+        0x42, 
+        0x00,
+        0x00,
+        0x00,
+        0x00   # Total 19 bytes before checksum
+    ]
+
+    mV = int(voltage_value * 100)
+    high_byte = (mV >> 8) & 0xFF
+    low_byte = mV & 0xFF
+
+    command[3] = high_byte
+    command[4] = low_byte
+
+    checksum = sum(command) % 256
+    command.append(checksum)
+    
+    string_command = ''.join(f'\\x{byte:02X}' for byte in command)
+    return string_command
 
 # WebSocket handler - Updated to work with newer websockets library
 async def websocket_handler(websocket):
@@ -108,6 +149,10 @@ async def websocket_handler(websocket):
                     
                     # Process the train velocity command
                     velocity = data['value']
+                    setVoltageCommand = get_voltage(int(velocity))
+                    linuxCommand = f"echo -n -e {setVoltageCommand} > /dev/ttyUSB0"
+                    print(linuxCommand)
+                    subprocess.run(linuxCommand, shell=True)
                     logger.info(f"User {username} set velocity to {velocity}")
                     log_command(username, "velocity", velocity)
                     
@@ -309,8 +354,7 @@ async def main():
     ssl_context = create_ssl_context()
     if not ssl_context:
         logger.error("Failed to create SSL context. Exiting.")
-        return
-    
+        return    
     # Determine how to start the server based on websockets version
     ws_version = get_websockets_version()
     logger.info(f"Using websockets library version: {ws_version}")

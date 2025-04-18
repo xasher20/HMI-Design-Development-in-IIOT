@@ -1,0 +1,665 @@
+2025-04-18 15:02:12,684 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:02:12,690 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:02:12,693 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:02:12,693 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:02:26,395 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:02:26,400 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:02:26,404 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:02:26,405 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:03:10,087 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:03:10,092 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:03:10,094 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:03:10,094 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:03:59,579 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:03:59,584 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:03:59,587 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:03:59,587 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:03:59,587 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-18 15:03:59,592 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:03:59,592 - train_control - WARNING - Starting unsecure HTTP server on port 8001
+2025-04-18 15:03:59,602 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-18 15:03:59,602 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-04-18 15:05:17,366 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:17,585 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:17,618 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:17,684 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:17,902 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:17,920 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,029 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,033 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,280 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,332 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,335 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:05:19,584 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 138, in parse
+    request_line = yield from parse_line(read_line)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 314, in parse_line
+    raise EOFError("line without CRLF")
+EOFError: line without CRLF
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 545, in parse
+    request = yield from Request.parse(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.reader.read_line,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\http11.py", line 140, in parse
+    raise EOFError("connection closed while reading HTTP request line") from exc
+EOFError: connection closed while reading HTTP request line
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+websockets.exceptions.InvalidMessage: did not receive a valid HTTP request
+2025-04-18 15:06:13,372 - train_control - INFO - Server shutdown by user
+2025-04-18 15:07:04,002 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:07:04,007 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:07:04,010 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:07:04,011 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:11:06,237 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:11:06,244 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:11:06,245 - train_control - ERROR - Failed to create SSL certificates. Please create them manually.
+2025-04-18 15:11:06,245 - train_control - ERROR - Failed to create SSL context. Exiting.
+2025-04-18 15:11:19,615 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:11:19,620 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-18 15:11:20,049 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-18 15:11:20,064 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-18 15:11:20,064 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-04-18 15:11:21,049 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-04-18 15:11:31,115 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-18 15:11:31,117 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 138, in accept
+    ) = self.process_request(request)
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 233, in process_request
+    raise InvalidUpgrade(
+        "Connection", ", ".join(connection) if connection else None
+    )
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-04-18 15:11:31,355 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-18 15:11:31,356 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 356, in conn_handler
+    await connection.handshake(
+    ...<3 lines>...
+    )
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\asyncio\server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 138, in accept
+    ) = self.process_request(request)
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\josef\AppData\Roaming\Python\Python313\site-packages\websockets\server.py", line 233, in process_request
+    raise InvalidUpgrade(
+        "Connection", ", ".join(connection) if connection else None
+    )
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-04-18 15:11:47,530 - websockets.server - INFO - connection open
+2025-04-18 15:11:47,530 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:11:55,699 - websockets.server - INFO - connection open
+2025-04-18 15:11:55,700 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:11:58,050 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:11:58,051 - train_control - ERROR - users.json file not found. Creating default admin user.
+2025-04-18 15:11:58,052 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:12:02,383 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:12:02,384 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:12:19,506 - websockets.server - INFO - connection open
+2025-04-18 15:12:19,506 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:12:23,734 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:12:23,735 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:12:29,646 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:12:29,647 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:12:41,255 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:12:41,256 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:12:49,709 - websockets.server - INFO - connection open
+2025-04-18 15:12:49,709 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:12:53,871 - websockets.server - INFO - connection open
+2025-04-18 15:12:53,871 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:12:55,096 - websockets.server - INFO - connection open
+2025-04-18 15:12:55,097 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:12:56,307 - websockets.server - INFO - connection open
+2025-04-18 15:12:56,308 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:13:02,701 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:13:02,702 - train_control - WARNING - Failed authentication attempt from 127.0.0.1
+2025-04-18 15:14:09,386 - websockets.server - INFO - connection open
+2025-04-18 15:14:09,387 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 15:14:14,665 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 15:14:14,666 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-18 15:14:17,460 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,461 - train_control - INFO - User admin set velocity to 3
+2025-04-18 15:14:17,671 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,672 - train_control - INFO - User admin set velocity to 4
+2025-04-18 15:14:17,682 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,682 - train_control - INFO - User admin set velocity to 5
+2025-04-18 15:14:17,700 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,700 - train_control - INFO - User admin set velocity to 7
+2025-04-18 15:14:17,716 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,716 - train_control - INFO - User admin set velocity to 10
+2025-04-18 15:14:17,733 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,734 - train_control - INFO - User admin set velocity to 11
+2025-04-18 15:14:17,749 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,750 - train_control - INFO - User admin set velocity to 12
+2025-04-18 15:14:17,766 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,766 - train_control - INFO - User admin set velocity to 13
+2025-04-18 15:14:17,784 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,785 - train_control - INFO - User admin set velocity to 14
+2025-04-18 15:14:17,831 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,832 - train_control - INFO - User admin set velocity to 15
+2025-04-18 15:14:17,898 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,899 - train_control - INFO - User admin set velocity to 16
+2025-04-18 15:14:17,981 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:17,982 - train_control - INFO - User admin set velocity to 17
+2025-04-18 15:14:18,015 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,015 - train_control - INFO - User admin set velocity to 18
+2025-04-18 15:14:18,034 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,034 - train_control - INFO - User admin set velocity to 19
+2025-04-18 15:14:18,050 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,050 - train_control - INFO - User admin set velocity to 20
+2025-04-18 15:14:18,058 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,059 - train_control - INFO - User admin set velocity to 21
+2025-04-18 15:14:18,738 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,739 - train_control - INFO - User admin set velocity to 22
+2025-04-18 15:14:18,748 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,749 - train_control - INFO - User admin set velocity to 25
+2025-04-18 15:14:18,765 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,766 - train_control - INFO - User admin set velocity to 29
+2025-04-18 15:14:18,783 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,783 - train_control - INFO - User admin set velocity to 37
+2025-04-18 15:14:18,800 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,800 - train_control - INFO - User admin set velocity to 44
+2025-04-18 15:14:18,817 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,817 - train_control - INFO - User admin set velocity to 49
+2025-04-18 15:14:18,832 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,833 - train_control - INFO - User admin set velocity to 57
+2025-04-18 15:14:18,850 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,850 - train_control - INFO - User admin set velocity to 60
+2025-04-18 15:14:18,866 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,866 - train_control - INFO - User admin set velocity to 63
+2025-04-18 15:14:18,883 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,883 - train_control - INFO - User admin set velocity to 64
+2025-04-18 15:14:18,899 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,899 - train_control - INFO - User admin set velocity to 65
+2025-04-18 15:14:18,916 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:18,917 - train_control - INFO - User admin set velocity to 66
+2025-04-18 15:14:19,031 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,031 - train_control - INFO - User admin set velocity to 67
+2025-04-18 15:14:19,114 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,115 - train_control - INFO - User admin set velocity to 68
+2025-04-18 15:14:19,183 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,183 - train_control - INFO - User admin set velocity to 69
+2025-04-18 15:14:19,198 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,199 - train_control - INFO - User admin set velocity to 72
+2025-04-18 15:14:19,216 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,216 - train_control - INFO - User admin set velocity to 77
+2025-04-18 15:14:19,232 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,232 - train_control - INFO - User admin set velocity to 82
+2025-04-18 15:14:19,249 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,249 - train_control - INFO - User admin set velocity to 84
+2025-04-18 15:14:19,266 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,267 - train_control - INFO - User admin set velocity to 86
+2025-04-18 15:14:19,283 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,283 - train_control - INFO - User admin set velocity to 87
+2025-04-18 15:14:19,316 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,317 - train_control - INFO - User admin set velocity to 88
+2025-04-18 15:14:19,348 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,348 - train_control - INFO - User admin set velocity to 89
+2025-04-18 15:14:19,366 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,366 - train_control - INFO - User admin set velocity to 90
+2025-04-18 15:14:19,398 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,399 - train_control - INFO - User admin set velocity to 91
+2025-04-18 15:14:19,416 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,417 - train_control - INFO - User admin set velocity to 92
+2025-04-18 15:14:19,433 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,433 - train_control - INFO - User admin set velocity to 93
+2025-04-18 15:14:19,449 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,450 - train_control - INFO - User admin set velocity to 94
+2025-04-18 15:14:19,467 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,467 - train_control - INFO - User admin set velocity to 95
+2025-04-18 15:14:19,498 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,498 - train_control - INFO - User admin set velocity to 96
+2025-04-18 15:14:19,548 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,549 - train_control - INFO - User admin set velocity to 97
+2025-04-18 15:14:19,696 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,696 - train_control - INFO - User admin set velocity to 98
+2025-04-18 15:14:19,881 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,881 - train_control - INFO - User admin set velocity to 99
+2025-04-18 15:14:19,900 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 15:14:19,901 - train_control - INFO - User admin set velocity to 100
+2025-04-18 16:00:21,759 - train_control - INFO - User admin disconnected
+2025-04-18 16:00:21,761 - train_control - INFO - Server shutdown by user
+2025-04-18 16:00:29,431 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-18 16:00:29,437 - train_control - INFO - Starting secure HTTPS server on port 8001
+2025-04-18 16:00:29,445 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-18 16:00:29,446 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+2025-04-18 16:01:26,458 - websockets.server - INFO - connection open
+2025-04-18 16:01:26,459 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 16:01:32,533 - websockets.server - INFO - connection open
+2025-04-18 16:01:32,533 - train_control - INFO - Client connected from 127.0.0.1
+2025-04-18 16:01:35,187 - train_control - INFO - Received message from 127.0.0.1: auth
+2025-04-18 16:01:35,188 - train_control - INFO - User admin authenticated from 127.0.0.1
+2025-04-18 16:01:36,418 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,430 - train_control - INFO - User admin set velocity to 2
+2025-04-18 16:01:36,753 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,761 - train_control - INFO - User admin set velocity to 3
+2025-04-18 16:01:36,771 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,779 - train_control - INFO - User admin set velocity to 4
+2025-04-18 16:01:36,788 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,795 - train_control - INFO - User admin set velocity to 5
+2025-04-18 16:01:36,804 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,812 - train_control - INFO - User admin set velocity to 6
+2025-04-18 16:01:36,837 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,844 - train_control - INFO - User admin set velocity to 7
+2025-04-18 16:01:36,855 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,863 - train_control - INFO - User admin set velocity to 10
+2025-04-18 16:01:36,871 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,879 - train_control - INFO - User admin set velocity to 11
+2025-04-18 16:01:36,888 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,895 - train_control - INFO - User admin set velocity to 14
+2025-04-18 16:01:36,905 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,912 - train_control - INFO - User admin set velocity to 16
+2025-04-18 16:01:36,921 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,928 - train_control - INFO - User admin set velocity to 17
+2025-04-18 16:01:36,937 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,945 - train_control - INFO - User admin set velocity to 18
+2025-04-18 16:01:36,954 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,962 - train_control - INFO - User admin set velocity to 19
+2025-04-18 16:01:36,971 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,979 - train_control - INFO - User admin set velocity to 20
+2025-04-18 16:01:36,988 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:36,997 - train_control - INFO - User admin set velocity to 21
+2025-04-18 16:01:37,020 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,028 - train_control - INFO - User admin set velocity to 22
+2025-04-18 16:01:37,071 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,080 - train_control - INFO - User admin set velocity to 23
+2025-04-18 16:01:37,120 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,131 - train_control - INFO - User admin set velocity to 24
+2025-04-18 16:01:37,170 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,177 - train_control - INFO - User admin set velocity to 25
+2025-04-18 16:01:37,188 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,197 - train_control - INFO - User admin set velocity to 26
+2025-04-18 16:01:37,205 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,215 - train_control - INFO - User admin set velocity to 27
+2025-04-18 16:01:37,221 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,230 - train_control - INFO - User admin set velocity to 28
+2025-04-18 16:01:37,239 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,247 - train_control - INFO - User admin set velocity to 30
+2025-04-18 16:01:37,254 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,262 - train_control - INFO - User admin set velocity to 32
+2025-04-18 16:01:37,271 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,278 - train_control - INFO - User admin set velocity to 33
+2025-04-18 16:01:37,288 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,295 - train_control - INFO - User admin set velocity to 35
+2025-04-18 16:01:37,301 - train_control - INFO - Received message from 127.0.0.1: command
+2025-04-18 16:01:37,309 - train_control - INFO - User admin set velocity to 36
+2025-04-18 16:01:57,241 - train_control - INFO - User admin disconnected
+2025-04-18 16:01:57,243 - train_control - INFO - Server shutdown by user
