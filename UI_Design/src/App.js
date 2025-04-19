@@ -259,33 +259,36 @@ const TrainControl = () => {
         </div>
         
         <p className="status">{status}</p>
-        
+
+        <h2 style={{ marginTop: '20px', marginBottom: '5px' }}>Speed Control</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '0 15px' }}>
+          <span>2.5V</span>
+          <span>10V</span>
+        </div>
         <Slider 
           value={velocity}
           onChange={(e, v) => isAuthenticated ? setVelocity(v) : null}
           aria-label="Velocity" 
           valueLabelDisplay="auto"
-          min={0}
+          min={25}
           max={100}
           disabled={!isAuthenticated}
         />
         
         <div className="button-container">
-          <button 
-            className="button button-green"
-            onClick={() => isAuthenticated ? setVelocity(100) : setOpenAuthDialog(true)}
-            disabled={!isAuthenticated}
-          >
-            Start Train
-          </button>
-          
-          <button 
-            className="button button-red"
-            onClick={() => isAuthenticated ? setVelocity(0) : setOpenAuthDialog(true)}
-            disabled={!isAuthenticated}
-          >
-            Stop Train
-          </button>
+        <button
+          className={`button ${velocity >= 25 ? "button-red" : "button-green"}`}
+          onClick={() => {
+            if (isAuthenticated) {
+              setVelocity(velocity >= 25 ? 0 : 100); // Toggle between Stop and Start
+            } else {
+              setOpenAuthDialog(true);
+            }
+          }}
+          disabled={!isAuthenticated}
+        >
+          {velocity >= 25 ? "Stop Train" : "Start Train"}
+        </button>
            
           <button 
             className="button button-green"
