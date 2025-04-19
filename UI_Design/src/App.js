@@ -265,7 +265,7 @@ const TrainControl = () => {
           onChange={(e, v) => isAuthenticated ? setVelocity(v) : null}
           aria-label="Velocity" 
           valueLabelDisplay="auto"
-          min={-100}
+          min={0}
           max={100}
           disabled={!isAuthenticated}
         />
