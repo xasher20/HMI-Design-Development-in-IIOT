@@ -21,6 +21,7 @@ const TrainControl = () => {
   const [pendingAction, setPendingAction] = useState(null);
   const [authToken, setAuthToken] = useState(null);
   const [connectionError, setConnectionError] = useState(null);
+  const [isGateOpen, setIsGateOpen] = useState(false);
 
   // Memoize the executePendingAction function to avoid recreating it on every render
   const executePendingAction = useCallback(() => {
@@ -148,9 +149,10 @@ const TrainControl = () => {
             setStatus(data.message);
             break;
             
-          case 'gate_response':
-            setStatus(data.message);
-            break;
+            case 'gate_response':
+              setStatus(data.message);
+              setIsGateOpen(data.message.toLowerCase().includes("open"));
+              break;
             
           case 'error':
             setStatus(`Error: ${data.message}`);
@@ -189,7 +191,7 @@ const TrainControl = () => {
   }, [executePendingAction, username, pendingAction]); // Added missing dependencies
 
   useEffect(() => {
-    if (velocity !== 0 && isAuthenticated) {
+    if (isAuthenticated) {
       sendVelocityCommand(velocity);
     }
   }, [velocity, isAuthenticated, sendVelocityCommand]); // Added missing dependencies
@@ -276,34 +278,34 @@ const TrainControl = () => {
         />
         
         <div className="button-container">
-        <button
-          className={`button ${velocity >= 25 ? "button-red" : "button-green"}`}
-          onClick={() => {
-            if (isAuthenticated) {
-              setVelocity(velocity >= 25 ? 0 : 100); // Toggle between Stop and Start
-            } else {
-              setOpenAuthDialog(true);
-            }
-          }}
-          disabled={!isAuthenticated}
-        >
-          {velocity >= 25 ? "Stop Train" : "Start Train"}
-        </button>
-           
-          <button 
-            className="button button-green"
-            onClick={() => sendGateCommand("Open")}
+          <button
+            className={`button ${velocity >= 25 ? "button-red" : "button-green"}`}
+            onClick={() => {
+              if (isAuthenticated) {
+                setVelocity(velocity >= 25 ? 0 : 100); // Toggle between Stop and Start
+              } else {
+                setOpenAuthDialog(true);
+              }
+            }}
             disabled={!isAuthenticated}
           >
-            Open Gate
+            {velocity >= 25 ? "Stop Train" : "Start Train"}
           </button>
-          
-          <button 
-            className="button button-red"
-            onClick={() => sendGateCommand("Close")}
+           
+          <button
+            className={`button ${isGateOpen ? "button-red" : "button-green"}`}
+            onClick={() => {
+              if (isAuthenticated) {
+                const nextAction = isGateOpen ? "Close" : "Open";
+                sendGateCommand(nextAction);
+                setIsGateOpen(!isGateOpen);
+              } else {
+                setOpenAuthDialog(true);
+              }
+            }}
             disabled={!isAuthenticated}
           >
-            Close Gate
+            {isGateOpen ? "Close Gate" : "Open Gate"}
           </button>
         </div>
       </div>
