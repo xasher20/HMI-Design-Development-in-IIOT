@@ -7,7 +7,7 @@ Type=simple
 User=hmiuser
 WorkingDirectory=/backend
 ExecStartPre=/bin/bash -c 'stty -F /dev/ttyUSB0 raw && stty -F /dev/ttyUSB0 9600 && stty -F /dev/ttyUSB0 -isig -icanon -echo && chmod a+rwx /dev/ttyUSB0'
-ExecStart=/bin/bash -c 'echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && source /backend/venv/bin/activate && python backend.py'
+ExecStart=/bin/bash -c 'echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && source /backend/myenv/bin/activate && python backend.py'
 Restart=on-failure
 RestartSec=5s
 
