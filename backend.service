@@ -1,0 +1,15 @@
+[Unit]
+Description=FoxgoldTown Backend Service
+After=network.target
+
+[Service]
+Type=simple
+User=hmiuser
+WorkingDirectory=/backend
+ExecStartPre= -c 'stty -F /dev/ttyUSB0 raw && stty -F /dev/ttyUSB0 9600 && stty -F /dev/ttyUSB0 -isig -icanon -echo && chmod a+rwx /dev/ttyUSB0'
+ExecStart= -c 'echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && echo -n -e "\xAA\x01\x20\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xCC" > /dev/ttyUSB0 && source /backend/venv/bin/activate && python backend.py'
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
