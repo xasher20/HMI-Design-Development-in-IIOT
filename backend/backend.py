@@ -179,7 +179,12 @@ async def websocket_handler(websocket):
                         "success": True,
                         "message": f"Velocity set to: {velocity}"
                     }))
-                
+                elif data.get('type') == "keep_alive":
+                    await websocket.send(json.dumps({
+                        "type": "keep_alive_response",
+                        "success": True
+                    }))
+                    continue
                 # Handle gate control
                 elif data.get('type') == 'gate':
                     if not authenticated:
