@@ -159,7 +159,7 @@ const TrainControl = () => {
             break;
           case 'turbine_response':
             setStatus(data.message);
-            setIsGateOpen(data.message.toLowerCase().includes("start"));
+            setIsTurbineOn(data.message.toLowerCase().includes("start"));
             break;  
           case 'error':
             setStatus(`Error: ${data.message}`);
