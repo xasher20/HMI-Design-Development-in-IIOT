@@ -332,7 +332,7 @@ const TrainControl = () => {
             }}
             disabled={!isAuthenticated}
           >
-            {isTurbineOn ? "Start Turbine" : "Stop Turbine"}
+            {isTurbineOn ? "Stop Turbine" : "Start Turbine"}
           </button>
         </div>
       </div>
