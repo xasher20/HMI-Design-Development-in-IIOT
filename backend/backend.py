@@ -156,8 +156,17 @@ async def websocket_handler(websocket):
                     # print(linuxCommand)
                     command_bytes = bytes.fromhex(setVoltageCommand.replace('\\x', ''))
 
-                    with serial.Serial('/dev/ttyUSB0', 9600, timeout=1) as ser:
-                        ser.write(command_bytes)
+                    try:
+                        with serial.Serial('/dev/ttyUSB0', 9600, timeout=1) as ser:
+                            ser.write(command_bytes)
+                    except serial.serialutil.SerialException as e:
+                        await websocket.send(json.dumps({
+                            "type": "command_response",
+                            "success": False,
+                            "message": str(e)
+                        }))
+                        continue
+
                     # subprocess.run(f"sh -c \"{linuxCommand}\"", shell=True)
                     logger.info(f"User {username} set velocity to {velocity}")
                     log_command(username, "velocity", velocity)
@@ -198,7 +207,33 @@ async def websocket_handler(websocket):
                         "success": True,
                         "message": f"Gate {action} command executed"
                     }))
-                
+                # Handle fan control
+                elif data.get('type') == 'turbine':
+                    if not authenticated:
+                        await websocket.send(json.dumps({
+                            "type": "error",
+                            "message": "Authentication required"
+                        }))
+                        continue
+                    
+                    # Process the gate command
+                    action = data['action']
+                    logger.info(f"User {username} sent gate command: {action}")
+                    log_command(username, "gate", action)
+                    if action=="Start":
+                        print("&&&&")
+                        client.write_coil(8193, True)
+                    else:
+                        print("****")
+                        client.write_coil(8193, False)
+                    # Here you would add code to actually control the gate
+                    # For example, interfacing with hardware or other systems
+                    
+                    await websocket.send(json.dumps({
+                        "type": "turbine_response",
+                        "success": True,
+                        "message": f"Turbine {action} command executed"
+                    }))
                 else:
                     logger.warning(f"Unknown message type received: {data.get('type', 'undefined')}")
                     await websocket.send(json.dumps({

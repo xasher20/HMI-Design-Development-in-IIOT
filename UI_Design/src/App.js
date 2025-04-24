@@ -26,12 +26,29 @@ const TrainControl = () => {
 
   const [connectionError, setConnectionError] = useState(null);
   const [isGateOpen, setIsGateOpen] = useState(false);
+  const [isTurbineOn, setIsTurbineOn] = useState(false);
 
   // Memoize the sendVelocityCommand function
   const sendVelocityCommand = useCallback((value) => {
     if (ws && ws.readyState === WebSocket.OPEN) {
       const command = {
         type: 'command',
+        value: value
+      };
+      
+      console.log("Sending command:", command);
+      ws.send(JSON.stringify(command));
+      setStatus(`Sending command: ${value}`);
+    } else {
+      setStatus("WebSocket connection not available");
+    }
+  }, [ws]);
+
+  // Memoize the sendVelocityCommand function
+  const sendTurbineCommand = useCallback((value) => {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      const command = {
+        type: 'turbine',
         value: value
       };
       
@@ -139,6 +156,10 @@ const TrainControl = () => {
           case 'gate_response':
             setStatus(data.message);
             setIsGateOpen(data.message.toLowerCase().includes("open"));
+            break;
+          case 'turbine_response':
+            setStatus(data.message);
+            setIsGateOpen(data.message.toLowerCase().includes("start"));
             break;  
           case 'error':
             setStatus(`Error: ${data.message}`);
@@ -296,6 +317,22 @@ const TrainControl = () => {
             disabled={!isAuthenticated}
           >
             {isGateOpen ? "Close Gate" : "Open Gate"}
+          </button>
+
+          <button
+            className={`button ${isTurbineOn ? "button-red" : "button-green"}`}
+            onClick={() => {
+              if (isAuthenticated) {
+                const nextAction = isTurbineOn ? "Stop" : "Start";
+                sendTurbineCommand(nextAction);
+                setIsTurbineOn(!isTurbineOn);
+              } else {
+                setLoginDialogIsOpen(true);
+              }
+            }}
+            disabled={!isAuthenticated}
+          >
+            {isTurbineOn ? "Start Turbine" : "Stop Turbine"}
           </button>
         </div>
       </div>
