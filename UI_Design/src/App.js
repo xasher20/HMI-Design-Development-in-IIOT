@@ -49,7 +49,7 @@ const TrainControl = () => {
     if (ws && ws.readyState === WebSocket.OPEN) {
       const command = {
         type: 'turbine',
-        value: value
+        action: value
       };
       
       console.log("Sending command:", command);
