@@ -1,0 +1,41 @@
+nohup: ignoring input
+2025-04-02 00:45:40,620 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+2025-04-02 00:45:40,622 - train_control - INFO - SSL certificates not found. Creating self-signed certificates...
+......+...+......++........++...+.....+.......+.+...++............+...........+.+.......+.....+...........+................+.+..+...+...+......++...........+++...++.+++..++..+.++.++.....+...++...+++..........++..+...++...++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*+.........++.....+...++.........+.........++.+++...++...+++..++.+++.....++.+++.....++*.....+...+.........+......+.................+.....+.......++...+++...++..+++......+++....++..+++.........++.+++......+++..++......+++.++........+++......++.....+..++.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*+++.+++++++++++++++++++++++*.+.................+.+........+...+......+................+.+.+..............................................+.........+.+....++.......+..+..........+........+...+......+...............+.............+...........+.........++................+......+..........+.+...............+................+......+............+.+.+...+..+...+...+.................+..+.+...................+.+.....+.+.............+....................+..........++......+..........++........+....+.+.+......+................+................................+.+.+....+....................+...+...........+.+.+......+..+....+......+..+..+..............+..+.+..............+....................+.+...............+...+......................+..+..................+...+.........+........+...+......+...............+........+...+...............+..+....+..+..+...+.........+.+.+..+.....+..+..+..+...+...++...+......+.....+......+.++.++..++.+++......+.....+......+......+......+.++..++..+.++.++....+..++...+......+......+..++.++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.....+.....+...+.......+...+......+.....+....+..+...+...+.......+..+.........+.+.........+.....+......+...+.+.....+......+.+........+....+.....+...+.........+.............+..+.+..+...+...................+......+...+..+...+......+...+.+.....+................+......+.....+.......++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...............+........+....+............+.....+................+...+..+....+...+........+...+....+...+...+.....+......+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+++.....+......+....++.+......+..++.++..+....++..+...++..+......+......+..++...+++......+...++..+.++..++...+.....+....++
+...+..............................+...+...+.....+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+.....+.+........++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++*.......+...........+........................+..++....+......+.....+...++...+.....+......+.++.++...+......+++.....+...++...+....++.+..++....+.....+......+++......+..++.++..+.++...++.+......+.++....+++......+......+.....+++......+......+...++..+......+......+..++...+......+++.....+++...++..+......+......+..++...+......+..++...+++......+++.++....+
+.....+...........+...+............-----
+..........+...2025-04-02 00:45:43,064 - train_control - INFO - Starting secure HTTPS server on port 8001
+...+...+......+...+..+.........+.......+...+....................+.+.........+..+..........+..+.......+...+..+...+.+.....+.........+.+..+.......+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----
+2025-04-02 00:45:44,055 - train_control - INFO - Using websockets library version: 15.0.1
+2025-04-02 00:45:44,093 - websockets.server - INFO - server listening on 0.0.0.0:8000
+2025-04-02 00:45:44,093 - train_control - INFO - WebSocket server started on wss://0.0.0.0:8000
+192.168.65.6 - - [02/Apr/2025 00:46:32] "GET / HTTP/1.1" 200 -
+192.168.65.6 - - [02/Apr/2025 00:46:32] "GET /favicon.ico HTTP/1.1" 200 -
+2025-04-02 00:46:42,411 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-02 00:46:42,416 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive
+2025-04-02 00:46:43,135 - websockets.server - INFO - connection rejected (426 Upgrade Required)
+2025-04-02 00:46:43,140 - websockets.server - ERROR - opening handshake failed
+Traceback (most recent call last):
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/asyncio/server.py", line 207, in handshake
+    raise self.protocol.handshake_exc
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/server.py", line 138, in accept
+    ) = self.process_request(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hmiuser/HMI-Design-Development-in-IIOT/backend/myenv/lib/python3.12/site-packages/websockets/server.py", line 233, in process_request
+    raise InvalidUpgrade(
+websockets.exceptions.InvalidUpgrade: invalid Connection header: keep-alive

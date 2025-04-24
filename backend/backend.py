@@ -12,7 +12,9 @@ from urllib.parse import parse_qs
 import base64
 import subprocess
 import serial
+from pymodbus.client import ModbusTcpClient
 
+client=ModbusTcpClient('192.168.56.4', port=502)
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -182,7 +184,12 @@ async def websocket_handler(websocket):
                     action = data['action']
                     logger.info(f"User {username} sent gate command: {action}")
                     log_command(username, "gate", action)
-                    
+                    if action=="Open":
+                        print("&&&&")
+                        client.write_coil(8195, False)
+                    else:
+                        print("****")
+                        client.write_coil(8195, True)
                     # Here you would add code to actually control the gate
                     # For example, interfacing with hardware or other systems
                     
