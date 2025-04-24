@@ -13,6 +13,7 @@ import base64
 import subprocess
 import serial
 from pymodbus.client import ModbusTcpClient
+from pymodbus.exceptions import ConnectionException
 
 client=ModbusTcpClient('192.168.56.4', port=502)
 # Configure logging
@@ -198,12 +199,20 @@ async def websocket_handler(websocket):
                     action = data['action']
                     logger.info(f"User {username} sent gate command: {action}")
                     log_command(username, "gate", action)
-                    if action=="Open":
-                        print("&&&&")
-                        client.write_coil(8195, False)
-                    else:
-                        print("****")
-                        client.write_coil(8195, True)
+                    try:
+                        if action=="Open":
+                            print("&&&&")
+                            client.write_coil(8195, False)
+                        else:
+                            print("****")
+                            client.write_coil(8195, True)
+                    except ConnectionException as e:
+                        await websocket.send(json.dumps({
+                            "type": "gate_response",
+                            "success": False,
+                            "message": str(e)
+                        }))
+                        continue
                     # Here you would add code to actually control the gate
                     # For example, interfacing with hardware or other systems
                     
@@ -224,13 +233,22 @@ async def websocket_handler(websocket):
                     # Process the gate command
                     action = data['action']
                     logger.info(f"User {username} sent gate command: {action}")
-                    log_command(username, "gate", action)
-                    if action=="Start":
-                        print("&&&&")
-                        client.write_coil(8193, True)
-                    else:
-                        print("****")
-                        client.write_coil(8193, False)
+                    log_command(username, "turbine", action)
+                    try:
+                        if action=="Start":
+                            print("&&&&")
+                            client.write_coil(8193, True)
+                        else:
+                            print("****")
+                            client.write_coil(8193, False)
+                    except ConnectionException as e:
+                        await websocket.send(json.dumps({
+                            "type": "turbine_response",
+                            "success": False,
+                            "message": str(e)
+                        }))
+                        continue
+
                     # Here you would add code to actually control the gate
                     # For example, interfacing with hardware or other systems
                     

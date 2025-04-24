@@ -275,7 +275,7 @@ const TrainControl = () => {
 
         <h2 style={{ marginTop: '20px', marginBottom: '5px' }}>Speed Control</h2>
         <div style={{ display: 'flex', justifyContent: 'space-between', margin: '0 15px' }}>
-          <span>2.5V</span>
+          <span>0V</span>
           <span>10V</span>
         </div>
         <Slider 
