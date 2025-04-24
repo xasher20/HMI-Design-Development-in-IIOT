@@ -11,42 +11,25 @@ import "./App.css";
 
 const TrainControl = () => {
   const [ws, setWs] = useState(null);
+
   const [velocity, setVelocity] = useState(0);
+  
   const [status, setStatus] = useState("Waiting for connection...");
+  
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState("");
+ 
+  const [username, setUsername] = useState("");  
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
-  const [openAuthDialog, setOpenAuthDialog] = useState(false);
-  const [pendingAction, setPendingAction] = useState(null);
-  const [authToken, setAuthToken] = useState(null);
+  
+  const [loginDialogIsOpen, setLoginDialogIsOpen] = useState(false);
+
   const [connectionError, setConnectionError] = useState(null);
   const [isGateOpen, setIsGateOpen] = useState(false);
-
-  // Memoize the executePendingAction function to avoid recreating it on every render
-  const executePendingAction = useCallback(() => {
-    if (!pendingAction) return;
-    
-    const { type, value } = pendingAction;
-    
-    if (type === 'velocity') {
-      sendVelocityCommand(value);
-    } else if (type === 'gate') {
-      sendGateCommand(value);
-    }
-    
-    setPendingAction(null);
-  }, [pendingAction]); // pendingAction is a dependency
 
   // Memoize the sendVelocityCommand function
   const sendVelocityCommand = useCallback((value) => {
     if (ws && ws.readyState === WebSocket.OPEN) {
-      if (!isAuthenticated) {
-        setPendingAction({ type: 'velocity', value });
-        setOpenAuthDialog(true);
-        return;
-      }
-      
       const command = {
         type: 'command',
         value: value
@@ -58,15 +41,10 @@ const TrainControl = () => {
     } else {
       setStatus("WebSocket connection not available");
     }
-  }, [ws, isAuthenticated, setOpenAuthDialog, setStatus]);
+  }, [ws]);
 
   // Memoize the sendGateCommand function
   const sendGateCommand = useCallback((action) => {
-    if (!isAuthenticated) {
-      setPendingAction({ type: 'gate', value: action });
-      setOpenAuthDialog(true);
-      return;
-    }
     
     if (ws && ws.readyState === WebSocket.OPEN) {
       const command = {
@@ -79,14 +57,14 @@ const TrainControl = () => {
       setStatus(`Sending gate command: ${action}`);
     } else {
       // Fallback to HTTPS endpoint with authentication token
-      fetch('https://192.168.56.2:8001', {
+      fetch('https://localhost:8001', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ 
           action: action, 
-          token: authToken 
+          token: btoa(`${username}:${Date.now()}`) 
         })
       })
       .then(response => response.json())
@@ -99,23 +77,41 @@ const TrainControl = () => {
         setStatus(`Error sending gate command: ${error.message}`);
       });
     }
-  }, [isAuthenticated, ws, authToken, setStatus, setOpenAuthDialog]);
+  }, [ws]);
 
+  //Establish a new websocket connection
   useEffect(() => {
     // Connect to the secure WebSocket server
     console.log("Connecting to WebSocket server...");
     
     // Using wss:// for secure WebSocket connection
-    const socket = new WebSocket("wss://192.168.56.2:8000");
+    const socket = new WebSocket("wss://localhost:8000");
     setWs(socket);
     
-    socket.onopen = () => {
+    const keepAlive = setInterval(() => {
+      socket.send(JSON.stringify({type: "keep_alive"}))
+    }, 10000);
+
+    return () => {
+
+      console.log("Closing WebSocket connection...");
+      clearInterval(keepAlive);
+      socket.close();
+      setWs(null);
+    };
+  }, []);
+
+  //Establish websocket callbacks
+  useEffect(() => {
+    if (!ws) return;
+
+    ws.onopen = () => {
       console.log("WebSocket connection established successfully");
       setStatus("Connected to server. Please authenticate to control the train.");
       setConnectionError(null);
     };
     
-    socket.onmessage = (event) => {
+    ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
         console.log("Received message:", data);
@@ -131,15 +127,6 @@ const TrainControl = () => {
               setIsAuthenticated(true);
               setStatus(data.message);
               setAuthError("");
-              setOpenAuthDialog(false);
-              
-              // Create a simple token
-              setAuthToken(btoa(`${username}:${Date.now()}`));
-              
-              // Execute pending action if there was one
-              if (pendingAction) {
-                executePendingAction();
-              }
             } else {
               setAuthError(data.message);
             }
@@ -149,20 +136,20 @@ const TrainControl = () => {
             setStatus(data.message);
             break;
             
-            case 'gate_response':
-              setStatus(data.message);
-              setIsGateOpen(data.message.toLowerCase().includes("open"));
-              break;
-            
+          case 'gate_response':
+            setStatus(data.message);
+            setIsGateOpen(data.message.toLowerCase().includes("open"));
+            break;  
           case 'error':
             setStatus(`Error: ${data.message}`);
             
             // If authentication required, open auth dialog
             if (data.message === 'Authentication required') {
-              setOpenAuthDialog(true);
+              setLoginDialogIsOpen(true);
             }
             break;
-            
+          case 'keep_alive_response':
+              break;
           default:
             setStatus(`Unknown message type: ${data.type}`);
         }
@@ -172,29 +159,32 @@ const TrainControl = () => {
       }
     };
     
-    socket.onclose = () => {
+    ws.onclose = () => {
       console.log("WebSocket connection closed");
       setStatus("Disconnected from server");
       setIsAuthenticated(false);
     };
     
-    socket.onerror = (error) => {
+    
+    ws.onerror = (error) => {
       console.error("WebSocket error:", error);
       setConnectionError("Connection failed. Make sure the server is running and SSL certificates are accepted.");
       setStatus("Connection error. See browser console for details.");
     };
     
-    return () => {
-      console.log("Closing WebSocket connection...");
-      socket.close();
-    };
-  }, [executePendingAction, username, pendingAction]); // Added missing dependencies
+  }, [ws]);
 
   useEffect(() => {
     if (isAuthenticated) {
       sendVelocityCommand(velocity);
     }
-  }, [velocity, isAuthenticated, sendVelocityCommand]); // Added missing dependencies
+  }, [velocity, isAuthenticated, sendVelocityCommand]);
+
+  useEffect(() => {
+    if (isAuthenticated === true){
+      setLoginDialogIsOpen(false); // Close the login dialog
+    }
+  }, [isAuthenticated]);
 
   const handleAuthenticate = () => {
     if (ws && ws.readyState === WebSocket.OPEN) {
@@ -207,18 +197,18 @@ const TrainControl = () => {
       console.log("Sending auth data:", {...authData, password: "******"});
       ws.send(JSON.stringify(authData));
       setPassword(""); // Clear password for security
+    } else {
+      console.log("Unable to authenticate - Websocket State: ", ws?.readyState);
     }
   };
 
   const handleCloseAuthDialog = () => {
-    setOpenAuthDialog(false);
-    setPendingAction(null);
+    setLoginDialogIsOpen(false);
     setAuthError("");
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    setAuthToken(null);
     setStatus("Logged out. Please authenticate to control the train.");
   };
 
@@ -232,7 +222,7 @@ const TrainControl = () => {
           <Alert severity="error" style={{ marginBottom: '15px' }}>
             {connectionError}
             <div style={{ fontSize: '0.9em', marginTop: '8px' }}>
-              To accept the SSL certificate, visit <a href="https://192.168.56.2:8000" target="_blank" rel="noopener noreferrer">https://localhost:8000</a> and <a href="https://localhost:8001" target="_blank" rel="noopener noreferrer">https://localhost:8001</a> directly in your browser.
+              To accept the SSL certificate, visit <a href="https://localhost:8000" target="_blank" rel="noopener noreferrer">https://localhost:8000</a> and <a href="https://localhost:8001" target="_blank" rel="noopener noreferrer">https://localhost:8001</a> directly in your browser.
             </div>
           </Alert>
         )}
@@ -252,7 +242,7 @@ const TrainControl = () => {
           ) : (
             <button
               className="button button-green"
-              onClick={() => setOpenAuthDialog(true)}
+              onClick={() => setLoginDialogIsOpen(true)}
               disabled={connectionError}
             >
               Login
@@ -272,7 +262,7 @@ const TrainControl = () => {
           onChange={(e, v) => isAuthenticated ? setVelocity(v) : null}
           aria-label="Velocity" 
           valueLabelDisplay="auto"
-          min={25}
+          min={0}
           max={100}
           disabled={!isAuthenticated}
         />
@@ -284,7 +274,7 @@ const TrainControl = () => {
               if (isAuthenticated) {
                 setVelocity(velocity >= 25 ? 0 : 100); // Toggle between Stop and Start
               } else {
-                setOpenAuthDialog(true);
+                setLoginDialogIsOpen(true);
               }
             }}
             disabled={!isAuthenticated}
@@ -300,7 +290,7 @@ const TrainControl = () => {
                 sendGateCommand(nextAction);
                 setIsGateOpen(!isGateOpen);
               } else {
-                setOpenAuthDialog(true);
+                setLoginDialogIsOpen(true);
               }
             }}
             disabled={!isAuthenticated}
@@ -311,7 +301,7 @@ const TrainControl = () => {
       </div>
       
       {/* Authentication Dialog */}
-      <Dialog open={openAuthDialog} onClose={handleCloseAuthDialog}>
+      <Dialog open={loginDialogIsOpen} onClose={handleCloseAuthDialog}>
         <DialogTitle>Authentication Required</DialogTitle>
         <DialogContent>
           {authError && (
